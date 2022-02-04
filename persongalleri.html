@@ -24,7 +24,7 @@
       section {
         grid-column: 3/4;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
         gap: 20px;
         margin-top: 2rem;
       }
@@ -32,6 +32,8 @@
       article {
         padding: 1rem;
         outline: 1px black solid;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
       }
 
       h2,
@@ -45,10 +47,13 @@
       <section>
         <template>
           <article>
-            <h2 class="firstname"></h2>
-            <p class="lastname"></p>
-            <p class="email"></p>
-            <p class="title"></p>
+            <div>
+              <h2 class="firstname"></h2>
+              <p class="lastname"></p>
+              <p class="email"></p>
+              <p class="title"></p>
+            </div>
+            <img src="" alt="Sample image" />
           </article>
         </template>
       </section>
@@ -83,6 +88,7 @@
           ).textContent = `Efternavn: ${person.efternavn}`;
           clone.querySelector(".email").textContent = `Email: ${person.email}`;
           clone.querySelector(".title").textContent = `Titel: ${person.titel}`;
+          clone.querySelector("img").src = `image/${person.billede}`;
           section.appendChild(clone);
         });
       }
